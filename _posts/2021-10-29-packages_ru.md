@@ -1,17 +1,18 @@
 ---
 layout: post
-title: About package in VHDL
-subtitle: And how it can break everything
+title: О конструкции package на VHDL
+subtitle: И как с её помощью все сломать
 tags: [VHDL, package]
-lang: en
+lang: ru
 comments: true
 ---
 
 {: .box-note}
-**Note:** I assume you already know basics of VHDL and how to build sequential logic with it so you could understand the article.
+**Note:** Предполагается, что Вы уже знаете основы VHDL и можете создавать комбинационную и последовательностною логику.
 
-## What is a VHDL Package
+## Что такое Package
 
+Помимо тестбенч-файлов и файлов описания синтезируемого дизайна VHDL позволяет создавать своего рода библиотечные файлы, которые называются **package**.
 In addition to testbench-files and regular synthesis-files VHDL provides library-files called **packages**. The package is a useful file to collect some universal data so it would not increase the size of the design files and can be easily shared from developer to developer. This kind of file is described by VHDL LRM and must be supported by all vendors. From now on, I've checked it with:
 
 * Quartus 18.0
