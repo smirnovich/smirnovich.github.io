@@ -7,8 +7,6 @@ comments: true
 ---
 
 
-## Что такое Package
-
 Начиная с версии Quartus 21.1 в качестве инструмента моделирования вместо ModelSim в комплекте идет [QuestaSim](https://fpgasoftware.intel.com/21.1/?edition=standard). При этом, версия QuestaSim Starter edition. Несмотря на то, что данное ПО фактически является бесплатным, необходимо все же получить на него бесплатную лицензию и корректно "установить" ее на ПК.
 
 ## Получение лицензии
@@ -18,11 +16,11 @@ comments: true
 
 Для создания файла лицензии необходимо зайти в [IntelFPGA Self-Licensing Center](https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html) под своим аккаунтом. На открывшейся странице необходимо выбрать пункт меню "Sign up for Evaluation or Free Licenses".
 
-![Screenshot RTL Quartus](/questa_images/image1.png)
+![Self-Licesing website](https://github.com/smirnovich/smirnovich.github.io/blob/master/_posts/questa-images/image1.png)
 
 На странице отобразится список доступных для лицензирования продуктов, в частности, Questa*-Intel® FPGA Starter Edition. Для того, чтобы начать создание лицензии необходимо выбрать строку c Questa и в столбце "Number of Seats" указать количество мест, которое будет обеспечиваться будущей лицензией. 
 
-![Screenshot RTL Quartus](/questa_images/image2.png)
+![Self-Licesing website](/questa_images/image2.png)
 
 После чего прочесть пользовательское соглашение и отметить галочку о его прочтении. По желанию можно поставить галочку если не хотите чтобы Intel с Вами связался по вопросу сбора обратной связи. И теперь кликаем кнопку Get License.
 
