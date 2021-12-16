@@ -6,95 +6,42 @@ lang: en
 comments: true
 ---
 
+From the 21.1 Quartus version ModelSim was changed on a [QuestaSim](https://fpgasoftware.intel.com/21.1/?edition=standard) as a default simulation instrument. In particular, QuestaSim Starter edition with altera/IntelFPGA libraries on-board. Despite the fact that this software is actually free, you still need to get a free license for it and correctly "install" it on your PC.
+
+## License Obtaining
+
 {: .box-note}
-**Note:** Предполагается, что Вы уже знаете основы VHDL и можете создавать комбинационную и последовательностною логику.
+**Note:** It is assumed that you already have an IntelFPGA account, because you cannot download QuestaSim without it.
 
-## Что такое Package
+Для создания файла лицензии необходимо зайти в [IntelFPGA Self-Licensing Center](https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html) под своим аккаунтом. На открывшейся странице необходимо выбрать пункт меню "Sign up for Evaluation or Free Licenses".
 
-Помимо тестбенч-файлов и файлов описания синтезируемого дизайна VHDL позволяет создавать своего рода библиотечные файлы, которые называются **package**.
-In addition to testbench-files and regular synthesis-files VHDL provides library-files called **packages**. The package is a useful file to collect some universal data so it would not increase the size of the design files and can be easily shared from developer to developer. This kind of file is described by VHDL LRM and must be supported by all vendors. From now on, I've checked it with:
+![Self-Licesing website](./questa-images/image1.png)
 
-* Quartus 18.0
-* Modelsim 10.5
-* Vivado/Vsim 2019.2
-* All edaplayground.com instruments
+На странице отобразится список доступных для лицензирования продуктов, в частности, Questa*-Intel® FPGA Starter Edition. Для того, чтобы начать создание лицензии необходимо выбрать строку c Questa и в столбце "Number of Seats" указать количество мест, которое будет обеспечиваться будущей лицензией. 
 
-## Synthax
-The ``ieee`` library  also consist of packages:  ``numeric_std``, ``std_logic_1164`` are also packages.
+![Self-Licesing-website](./questa-images/image2.png)
 
-The basic structure of the package is shown below:
+После чего прочесть пользовательское соглашение и отметить галочку о его прочтении. По желанию можно поставить галочку если не хотите чтобы Intel с Вами связался по вопросу сбора обратной связи. И теперь кликаем кнопку Get License.
 
-```vhdl
---my_pkg.vhd:
+В появившемся поле необходимо указать информацию о машине, на которой будет лежать лицензия. 
 
-package my_pkg is
-    constant WIDTH: integer := 32;
-end package my_pkg;
+![Generate lic](./questa-images/image3.png)
 
-package body my_pkg is
-    constant LENGTH: integer := 64;
-end package body my_pkg;
-```
-Since the default name of the library in a project is work, we can add this package in our code like:
+Если Вы ранее никогда не генерировали лицензии, то необходимо нажать +New computer и заполнить информацию. Так, если Вы планируете использовать только на своем ПК, необходимо указать имя ПК, его вид, тип лицензии и ID ПК, под которым подразумевается его MAC.
 
-```vhdl
---my_example1.vhd:
-library work;
-use work.my_pkg.all;
+![Create computer](./questa-images/image4.png)
 
-entity my_example1 is
-   port(
-       data_in : in bits(WIDTH-1 downto 0)
-   );
-end entity;
-```
+Указав всю информацию необходимо нажать Generate License, после чего через некоторое время Вам на почту пришлю файл с расширением ``*.dat``.
 
-A package can store different types of items: types, constants, functions, components etc. According to the VHDL LRM, a package declaration defines the visible contents of a package, while the body provides hidden details. That mean, that this code would have an error:
+## Установка лицензии
 
-```vhdl
---my_example2.vhd:
-library work;
-use work.my_pkg.all;
+{: .box-note}
+**Note:** Информация описана пока что только для пользователей Windows, постараюсь вскоре дополнить для Linux (вообще вроде как для Linux порядок такой же как и для Modelsim). 
 
-entity my_example2 is
-   port(
-       data_in : in bits(LENGTH-1 downto 0)
-   );
-end entity;
-```
-Example from Aldec on EDA playground:
+В письме будет довольно подробная информация о вариантах установки лицензии со ссылками на актуальные документы по типу [Quartus Prime Software Installation and Licensing Manual (.pdf)](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/quartus_install.pdf). Что делал я:
 
+* Переместил dat-файл в папку с ПО (D:/IntelFPGA)
+* В переменных среды (Панель управления -> Система -> Дополнительные параметры системы -> Переменные среды) создал/изменил переменные ``LM_LICENSE_FILE`` и ``MGLS_LICENSE_FILE``, указав в них абсолютный путь до лицензии включая её имя.
 
-{: .box-error}
-**Error:** ``COMP96 ERROR COMP96_0078: "Unknown identifier "LENGTH".``
-
-As you can see the data from the body cannot be seen outside the package, while data from the package itself is available.
-
-## Signal in a package
-
-
-{: .box-warning}
-**Warning:** This is not recommended style, I'm just showing the potential risk.
-
-
-The most interesting thing in a package is the availability to instantiate the signal in a package:
-```vhdl
-library ieee;
-use ieee.std_logic_1164.all;
-
-package my_pkg is
-    signal flag: std_logic;
-end package my_pkg;
-<...>
-```
-Since it is in a ``package`` part, not in a ``body``, it is available for any block, which uses this package. It allows to invisibly connect different blocks so no one would find out. Amazing! (An example is available here: <https://www.edaplayground.com/x/6Utw>)
-
-
-So I've created a simple design and decided to check it with an edaplayground (An example is available here: <https://www.edaplayground.com/x/6Utw>) and it works! With different simulation programs, it works well, 
-
-![Screenshot RTL Quartus](/pkg_images/rtl_quartus0.png)
-![Screenshot RTL Quartus](/pkg_images/rtl_quartus1.png)
-
-As you can see it looks weird and makes some kind of ports for each block.
-
- But, unfortunately, some instruments forbid this manipulation: <https://support.xilinx.com/s/article/65848?language=en_US>
+После этого запустил Questa в формате GUI и все сработало! 
+Надеюсь Вам помогла эта инструкция, если нет, то здесь работают комментарии, либо можно написать мне в Телеграмм  [@suggestmenews_bot](t.me/suggestmenews_bot)
