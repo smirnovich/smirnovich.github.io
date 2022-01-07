@@ -16,7 +16,7 @@ comments: true
 
 Для создания файла лицензии необходимо зайти в [IntelFPGA Self-Licensing Center](https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html) под своим аккаунтом. На открывшейся странице необходимо выбрать пункт меню "Sign up for Evaluation or Free Licenses".
 
-![Self-Licesing website](/_posts/questa-images/image1.png)
+![Self-Licesing website](_posts/questa-images/image1.png)
 
 На странице отобразится список доступных для лицензирования продуктов, в частности, Questa*-Intel® FPGA Starter Edition. Для того, чтобы начать создание лицензии необходимо выбрать строку c Questa и в столбце "Number of Seats" указать количество мест, которое будет обеспечиваться будущей лицензией. 
 
@@ -26,7 +26,7 @@ comments: true
 
 В появившемся поле необходимо указать информацию о машине, на которой будет лежать лицензия. 
 
-![Generate lic](/_posts/questa-images/image3.png)
+![Generate lic](./_posts/questa-images/image3.png)
 
 Если Вы ранее никогда не генерировали лицензии, то необходимо нажать +New computer и заполнить информацию. Так, если Вы планируете использовать только на своем ПК, необходимо указать имя ПК, его вид, тип лицензии и ID ПК, под которым подразумевается его MAC.
 
