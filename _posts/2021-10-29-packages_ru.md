@@ -93,8 +93,8 @@ Since it is in a ``package`` part, not in a ``body``, it is available for any bl
 
 So I've created a simple design and decided to check it with an edaplayground (An example is available here: <https://www.edaplayground.com/x/6Utw>) and it works! With different simulation programs, it works well, 
 
-![Screenshot RTL Quartus](/pkg_images/rtl_quartus0.png)
-![Screenshot RTL Quartus](/pkg_images/rtl_quartus1.png)
+![Screenshot RTL Quartus](/assets/pkg_images/rtl_quartus0.png)
+![Screenshot RTL Quartus](/assets/pkg_images/rtl_quartus1.png)
 
 As you can see it looks weird and makes some kind of ports for each block.
 

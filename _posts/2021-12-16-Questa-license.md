@@ -1,6 +1,6 @@
 ---
 layout: post
-title: QuestaSim IntelFPGA license obtaining
+title: QuestaSim IntelFPGA license obtaining (translation in progress)
 tags: [Questa, IntelFPGA]
 lang: en
 comments: true
@@ -13,23 +13,23 @@ From the 21.1 Quartus version ModelSim was changed on a [QuestaSim](https://fpga
 {: .box-note}
 **Note:** It is assumed that you already have an IntelFPGA account, because you cannot download QuestaSim without it.
 
-Для создания файла лицензии необходимо зайти в [IntelFPGA Self-Licensing Center](https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html) под своим аккаунтом. На открывшейся странице необходимо выбрать пункт меню "Sign up for Evaluation or Free Licenses".
+To create a license file you should use your account on [IntelFPGA Self-Licensing Center](https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html). After log in choose "Sign up for Evaluation or Free Licenses".
 
-![Self-Licesing website](./questa-images/image1.png)
+![Self-Licesing website](/assets/questa-images/image1.png)
 
-На странице отобразится список доступных для лицензирования продуктов, в частности, Questa*-Intel® FPGA Starter Edition. Для того, чтобы начать создание лицензии необходимо выбрать строку c Questa и в столбце "Number of Seats" указать количество мест, которое будет обеспечиваться будущей лицензией. 
+This page shows the list of avaliable products for your type of account, in particular, **Questa*-Intel® FPGA Starter Edition**. Для того, чтобы начать создание лицензии необходимо выбрать строку c Questa и в столбце "Number of Seats" указать количество мест, которое будет обеспечиваться будущей лицензией. 
 
-![Self-Licesing-website](./questa-images/image2.png)
+![Self-Licesing-website](/assets/questa-images/image2.png)
 
 После чего прочесть пользовательское соглашение и отметить галочку о его прочтении. По желанию можно поставить галочку если не хотите чтобы Intel с Вами связался по вопросу сбора обратной связи. И теперь кликаем кнопку Get License.
 
 В появившемся поле необходимо указать информацию о машине, на которой будет лежать лицензия. 
 
-![Generate lic](./questa-images/image3.png)
+![Generate lic](/assets/questa-images/image3.png)
 
 Если Вы ранее никогда не генерировали лицензии, то необходимо нажать +New computer и заполнить информацию. Так, если Вы планируете использовать только на своем ПК, необходимо указать имя ПК, его вид, тип лицензии и ID ПК, под которым подразумевается его MAC.
 
-![Create computer](./questa-images/image4.png)
+![Create computer](/assets/questa-images/image4.png)
 
 Указав всю информацию необходимо нажать Generate License, после чего через некоторое время Вам на почту пришлю файл с расширением ``*.dat``.
 
