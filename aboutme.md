@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About me
-subtitle: I'm Daniil Smirnov and here is kinda my blog
+title: About
+subtitle: I'm Daniil Smirnov and this is a blog with some tips
 ---
 
-My name is Daniil Smirnov, I am a junior researcher at ITMO University, NRC Light Guided Photonics.
+My name is Daniil Smirnov, I am an FPGA developer at ITMO University, NRC Light Guided Photonics.
