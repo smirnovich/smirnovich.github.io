@@ -1,7 +1,7 @@
 ---
 layout: post
-title: QuestaSim IntelFPGA license obtaining (translation in progress)
-tags: [FPGA, Questa, IntelFPGA]
+title: QuestaSim Altera/IntelFPGA license obtaining (translation in progress)
+tags: [FPGA, Questa, IntelFPGA, Altera]
 lang: en
 comments: true
 ---
@@ -11,7 +11,7 @@ From the 21.1 Quartus version ModelSim was changed on a [QuestaSim](https://fpga
 ## License Obtaining
 
 {: .box-note}
-**Note:** It is assumed that you already have an IntelFPGA account, because you cannot download QuestaSim without it.
+**Note:** It is assumed that you already have an Altera/IntelFPGA account, because you cannot download QuestaSim without it.
 
 To create a license file you should use your account on [IntelFPGA Self-Licensing Center](https://www.intel.com/content/www/us/en/my-intel/fpga-sslc-sign-in.html). After log in choose "Sign up for Evaluation or Free Licenses".
 
